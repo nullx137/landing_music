@@ -25,12 +25,19 @@
     channelId: "",                           // optional UC… id; skips handle resolution
     channelUrl: "https://www.youtube.com/@RitmixLOVE/",
     maxResults: 12,
-    // public CORS proxies tried in order for the no-key RSS fallback
+    // public CORS proxies tried in order for the no-key RSS fallback.
+    // Each proxy: { wrap: url -> proxiedUrl, json: true if it returns {contents:"..."} }.
     corsProxies: [
-      (u) => "https://api.allorigins.win/raw?url=" + encodeURIComponent(u),
-      (u) => "https://corsproxy.io/?url=" + encodeURIComponent(u),
-      (u) => "https://thingproxy.freeboard.io/fetch/" + u,
+      { wrap: (u) => "https://api.allorigins.win/raw?url=" + encodeURIComponent(u), json: false },
+      { wrap: (u) => "https://corsproxy.io/?url=" + encodeURIComponent(u),           json: false },
+      { wrap: (u) => "https://api.codetabs.com/v1/proxy/?quest=" + u,                 json: false },
+      { wrap: (u) => "https://thingproxy.freeboard.io/fetch/" + u,                   json: false },
+      { wrap: (u) => "https://api.allorigins.win/get?url=" + encodeURIComponent(u),  json: true  },
+      { wrap: (u) => "https://www.whateverorigin.org/get?url=" + encodeURIComponent(u), json: true },
     ],
+    // channel sub-pages tried (in order) when resolving handle → channelId
+    resolvePages: ["", "/videos", "/about", "/featured"],
+    cacheTtlMs: 1000 * 60 * 60 * 24, // 24h — cache resolved channelId in localStorage
   };
 
   const API_BASE = "https://www.googleapis.com/youtube/v3";
@@ -187,24 +194,76 @@
   }
 
   /* ---- Fallback: RSS via CORS proxy (no API key) ---- */
+  // Fetch a URL through the first working proxy. Handles JSON-wrapped proxies
+  // (allorigins /get, whateverorigin) that return { contents: "..." }.
   async function tryProxy(url) {
     let lastErr;
-    for (const wrap of YOUTUBE.corsProxies) {
+    for (const p of YOUTUBE.corsProxies) {
       try {
-        const res = await fetch(wrap(url), { headers: { "Accept": "application/xml,text/xml,*/*" } });
-        if (res.ok) return await res.text();
-        lastErr = new Error("proxy HTTP " + res.status);
+        const res = await fetch(p.wrap(url), { headers: { "Accept": "application/xml,text/xml,*/*" } });
+        if (!res.ok) { lastErr = new Error("proxy HTTP " + res.status); continue; }
+        let text = await res.text();
+        if (p.json) {
+          try { const j = JSON.parse(text); text = (j && j.contents) || ""; } catch (e) { /* not JSON */ }
+        }
+        if (text && text.length > 0) return text;
+        lastErr = new Error("proxy returned empty body");
       } catch (e) { lastErr = e; }
     }
     throw lastErr || new Error("Все прокси недоступны");
   }
 
+  // Resolve a @handle → UC channelId by scraping the channel page(s) via proxy.
+  // YouTube embeds the channelId in ytInitialData JSON (and sometimes escaped).
+  // We also try the RSS <link> tag and canonical link. Result is cached.
+  const CHAN_ID_PATTERNS = [
+    /"channelId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/,
+    /"externalId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/,
+    /"browseId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"/,
+    /channel\/(UC[A-Za-z0-9_-]{22})/,
+    /feeds\/videos\.xml\?channel_id=(UC[A-Za-z0-9_-]{22})/,
+  ];
+
+  function findChannelId(html) {
+    if (!html) return null;
+    // YouTube sometimes stores JSON double-escaped; try both raw and unescaped forms.
+    const forms = [html, html.replace(/\\"/g, '"').replace(/\\u0026/g, "&")];
+    for (const f of forms) {
+      for (const re of CHAN_ID_PATTERNS) {
+        const m = f.match(re);
+        if (m) return m[1];
+      }
+    }
+    return null;
+  }
+
   async function resolveChannelIdNoKey() {
     if (YOUTUBE.channelId) return YOUTUBE.channelId;
-    const html = await tryProxy("https://www.youtube.com/" + YOUTUBE.handle);
-    const m = html.match(/"channelId":"(UC[A-Za-z0-9_-]{22})"/) || html.match(/"externalId":"(UC[A-Za-z0-9_-]{22})"/) || html.match(/channel\/(UC[A-Za-z0-9_-]{22})/);
-    if (!m) throw new Error("channelId не найден на странице канала");
-    return m[1];
+
+    // 1) localStorage cache (avoids re-scraping every page load)
+    const cacheKey = "yt_chanid_" + YOUTUBE.handle.replace(/^@/, "");
+    try {
+      const cached = JSON.parse(localStorage.getItem(cacheKey) || "null");
+      if (cached && cached.id && /^UC[A-Za-z0-9_-]{22}$/.test(cached.id) &&
+          Date.now() - (cached.t || 0) < YOUTUBE.cacheTtlMs) {
+        return cached.id;
+      }
+    } catch (e) { /* ignore */ }
+
+    // 2) Scrape channel sub-pages until one yields the channelId
+    let lastErr;
+    for (const sub of YOUTUBE.resolvePages) {
+      const pageUrl = "https://www.youtube.com/" + YOUTUBE.handle + sub;
+      try {
+        const html = await tryProxy(pageUrl);
+        const id = findChannelId(html);
+        if (id) {
+          try { localStorage.setItem(cacheKey, JSON.stringify({ id, t: Date.now() })); } catch (e) {}
+          return id;
+        }
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error("channelId не найден на страницах канала");
   }
 
   async function fetchViaRss() {
