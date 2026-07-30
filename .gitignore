@@ -1,0 +1,19 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Logs / temp
+*.log
+tmp/
+.tmp/
+
+# Dev-only reference images (NOT used by the site)
+exemple.png
+error.png
+
+# Local server / build artifacts
+node_modules/
