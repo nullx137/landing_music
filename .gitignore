@@ -11,13 +11,5 @@ desktop.ini
 tmp/
 .tmp/
 
-# Dev-only reference images (NOT used by the site)
-exemple.png
-error.png
-micro.png
-
 # Local server / build artifacts
 node_modules/
-
-# Deploy / Docker secrets
-docker/.htpasswd
