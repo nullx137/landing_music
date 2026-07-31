@@ -8,8 +8,7 @@ backend:
   name: github
   repo: nullx137/landing_music
   branch: main
-
-local_backend: true
+  base_url: https://auth.decapcms.org
 
 # Media uploads land in /assets/images and are referenced as /assets/images/...
 media_folder: "assets/images"
