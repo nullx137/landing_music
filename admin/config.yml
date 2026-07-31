@@ -3,10 +3,10 @@
 # Edit all site texts, prices, images, and buttons at /admin/
 # ============================================================
 
-# Netlify: enable Identity + Git Gateway, then this backend works.
-# Local editing: run `npx decap-server` and open /admin/ (local_backend: true).
+# GitHub Pages configuration using Sveltia CMS (direct repository access)
 backend:
-  name: git-gateway
+  name: github
+  repo: nullx137/landing_music
   branch: main
 
 local_backend: true

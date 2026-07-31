@@ -250,16 +250,5 @@
 
   <!-- CMS loader applies content/site.json, then loads script.js + youtube.js -->
   <script src="cms.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 </html>
