@@ -84,7 +84,7 @@
         "name": "Именная песня",
         "subtitle": "Для личных событий и особенных людей",
         "price": "9 990",
-        "featured": false,
+        "featured": true,
         "badge": "",
         "features": [
           "Авторский текст и музыка",
@@ -99,7 +99,7 @@
         "name": "Рекламная песня / гимн",
         "subtitle": "Для бизнеса и брендов",
         "price": "19 990",
-        "featured": true,
+        "featured": false,
         "badge": "Популярный",
         "features": [
           "Авторский текст и музыка",
