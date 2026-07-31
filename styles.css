@@ -250,14 +250,14 @@ h1, h2, h3, h4, .brand__text { font-family: var(--font-display); font-weight: 70
 .chip:hover { transform: translateY(-2px); border-color: var(--border-pink); color: var(--text); }
 
 /* Hero visual (microphone + wave) */
-.hero__visual { position: relative; display: grid; place-items: center; min-height: 460px; }
+.hero__visual { position: relative; display: grid; place-items: center; min-height: 460px; align-content: start; padding-top: 0; margin-top: -48px; }
 .hero__visual-glow {
   position: absolute; inset: 8% 12%; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,0,122,.32), rgba(168,85,247,.18) 50%, transparent 70%);
   filter: blur(50px); pointer-events: none;
 }
 .hero__mic {
-  position: relative; z-index: 2; width: 100%; max-width: 780px; height: auto;
+  position: relative; z-index: 2; width: 100%; max-width: 880px; height: auto;
   object-fit: contain; filter: drop-shadow(0 30px 60px rgba(0,0,0,.6));
   animation: micFloat 7s var(--ease) infinite;
 }
@@ -564,8 +564,8 @@ h1, h2, h3, h4, .brand__text { font-family: var(--font-display); font-weight: 70
 
   .hero__inner { grid-template-columns: 1fr; }
   .hero__content { align-items: center; text-align: center; }
-  .hero__visual { order: -1; min-height: 360px; }
-  .hero__mic { max-width: 560px; }
+  .hero__visual { order: -1; min-height: 360px; margin-top: -24px; }
+  .hero__mic { max-width: 680px; }
   .chips { justify-content: center; }
 
   .cards-grid--6 { grid-template-columns: repeat(3, 1fr); }
