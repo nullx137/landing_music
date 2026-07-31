@@ -557,6 +557,9 @@ h1, h2, h3, h4, .brand__text { font-family: var(--font-display); font-weight: 70
   .nav-cta { display: none; }
   .nav-toggle { display: flex; }
 
+  /* Показываем фоновое изображение hero целиком, без обрезки на узких экранах */
+  .hero { background-size: contain; background-position: top center; }
+
   .hero__content { align-items: center; text-align: center; max-width: none; }
   .hero::before { background: linear-gradient(180deg, rgba(11,7,23,0.5) 0%, rgba(11,7,23,0.42) 32%, rgba(11,7,23,0.8) 72%, rgba(11,7,23,0.95) 100%); }
   .chips { justify-content: center; }
