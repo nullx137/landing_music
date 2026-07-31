@@ -3,16 +3,16 @@
 # Edit all site texts, prices, images, and buttons at /admin/
 # ============================================================
 
-# GitHub Pages configuration using Sveltia CMS (direct repository access)
 backend:
   name: github
   repo: nullx137/landing_music
   branch: main
-  base_url: https://auth.decapcms.org
+  auth_type: implicit
 
-# Media uploads land in /assets/images and are referenced as /assets/images/...
 media_folder: "assets/images"
 public_folder: "/assets/images"
+
+local_backend: true
 
 # Prefer locale for the editor UI
 locale: "ru"
