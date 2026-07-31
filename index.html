@@ -12,6 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Brief hold while CMS content loads — avoids empty flash */
+    html.cms-loading body > *:not(.bg-layers) { visibility: hidden; }
+    html.cms-ready body > * { visibility: visible; }
+  </style>
 </head>
 <body>
   <!-- Decorative background -->
@@ -31,17 +36,10 @@
       </a>
 
       <nav class="nav-links" aria-label="Основная навигация">
-        <a href="#home">Главная</a>
-        <a href="#portfolio">Портфолио</a>
-        <a href="#youtube">Релизы</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#process">Как заказать</a>
-        <a href="#contacts">Контакты</a>
+        <!-- filled by cms.js -->
       </nav>
 
-      <a href="https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8E%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D0%BF%D0%BE%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC." target="_blank" rel="noopener" class="btn btn--primary btn--sm nav-cta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="1.8"/></svg>
+      <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm nav-cta">
         Заказать песню
       </a>
 
@@ -51,14 +49,7 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Главная</a>
-      <a href="#portfolio">Портфолио</a>
-      <a href="#youtube">Релизы</a>
-      <a href="#pricing">Тарифы</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#process">Как заказать</a>
-      <a href="#contacts">Контакты</a>
-      <a href="https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8E%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D0%BF%D0%BE%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC." target="_blank" rel="noopener" class="btn btn--primary">Заказать песню</a>
+      <!-- filled by cms.js -->
     </div>
   </header>
 
@@ -67,28 +58,7 @@
     <section class="hero" id="home">
       <div class="container hero__inner">
         <div class="hero__content">
-          <span class="eyebrow reveal">♡ ПЕСНИ, КОТОРЫЕ ГОВОРЯТ ЗА ВАС</span>
-
-          <h1 class="hero__title reveal">
-            Именные песни<br />
-            <span class="hero__title--accent">на заказ</span>
-          </h1>
-
-          <p class="hero__subtitle reveal">
-            Создаём душевные песни и музыкальные подарки для дней рождения, свадеб,
-            годовщин, родителей, детей, рекламы и корпоративных гимнов.
-          </p>
-
-          <div class="hero__actions reveal">
-            <a href="#pricing" class="btn btn--primary">🎵 Заказать песню</a>
-            <a href="#portfolio" class="btn btn--ghost">► Послушать примеры</a>
-          </div>
-
-          <ul class="chips reveal" aria-label="Ключевые преимущества">
-            <li class="chip">🕒 До 24 часов</li>
-            <li class="chip">🎧 Студийное качество</li>
-            <li class="chip">💯 100% уникально</li>
-          </ul>
+          <!-- filled by cms.js from content/site.json -->
         </div>
       </div>
     </section>
@@ -96,37 +66,8 @@
     <!-- ============ ADVANTAGES ============ -->
     <section class="section section--tight" id="advantages">
       <div class="container">
-        <div class="cards-grid cards-grid--6">
-          <article class="adv-card reveal">
-            <span class="adv-card__icon">🕒</span>
-            <h3 class="adv-card__title">Срок до 24 часов</h3>
-            <p class="adv-card__text">Быстро создаём песню без потери качества</p>
-          </article>
-          <article class="adv-card reveal">
-            <span class="adv-card__icon">💎</span>
-            <h3 class="adv-card__title">Студийное качество</h3>
-            <p class="adv-card__text">Профессиональный звук, сведение и мастеринг</p>
-          </article>
-          <article class="adv-card reveal">
-            <span class="adv-card__icon">📝</span>
-            <h3 class="adv-card__title">Авторский текст по вашей истории</h3>
-            <p class="adv-card__text">Пишем от сердца для важных людей</p>
-          </article>
-          <article class="adv-card reveal">
-            <span class="adv-card__icon">🎵</span>
-            <h3 class="adv-card__title">2 версии исполнения</h3>
-            <p class="adv-card__text">Основная версия и акустическая/альтернативная</p>
-          </article>
-          <article class="adv-card reveal">
-            <span class="adv-card__icon">🛡️</span>
-            <h3 class="adv-card__title">Коммерческие права</h3>
-            <p class="adv-card__text">Используйте песню свободно и легально</p>
-          </article>
-          <article class="adv-card reveal">
-            <span class="adv-card__icon">🎧</span>
-            <h3 class="adv-card__title">Поддержка 24/7</h3>
-            <p class="adv-card__text">Всегда на связи на каждом этапе</p>
-          </article>
+        <div class="cards-grid cards-grid--6" id="cms-advantages">
+          <!-- filled by cms.js -->
         </div>
       </div>
     </section>
@@ -134,41 +75,11 @@
     <!-- ============ WHAT WE CREATE ============ -->
     <section class="section" id="create">
       <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title">Что мы <span class="grad-text">создаём</span></h2>
+        <div class="section__head reveal" id="cms-categories-head">
+          <!-- filled by cms.js -->
         </div>
-
-        <div class="cards-grid cards-grid--3">
-          <article class="cat-card reveal" data-glow>
-            <span class="cat-card__icon">🎂</span>
-            <h3 class="cat-card__title">Песня на день рождения</h3>
-            <p class="cat-card__text">Удивите именинника уникальной песней о его жизни и мечтах</p>
-          </article>
-          <article class="cat-card reveal" data-glow>
-            <span class="cat-card__icon">💍</span>
-            <h3 class="cat-card__title">Свадебная песня</h3>
-            <p class="cat-card__text">Ваша история любви в красивой песне для особенного дня</p>
-          </article>
-          <article class="cat-card reveal" data-glow>
-            <span class="cat-card__icon">❤️</span>
-            <h3 class="cat-card__title">Песня для мамы и папы</h3>
-            <p class="cat-card__text">Трогательный подарок родителям, который останется навсегда</p>
-          </article>
-          <article class="cat-card reveal" data-glow>
-            <span class="cat-card__icon">🏢</span>
-            <h3 class="cat-card__title">Гимн компании</h3>
-            <p class="cat-card__text">Подчеркнём ценности бренда и сплотим вашу команду</p>
-          </article>
-          <article class="cat-card reveal" data-glow>
-            <span class="cat-card__icon">📢</span>
-            <h3 class="cat-card__title">Рекламная песня</h3>
-            <p class="cat-card__text">Яркий музыкальный ролик, который запомнится вашим клиентам</p>
-          </article>
-          <article class="cat-card reveal" data-glow>
-            <span class="cat-card__icon">⭐</span>
-            <h3 class="cat-card__title">Песня на любой повод</h3>
-            <p class="cat-card__text">Годовщина, выпускной, крещение, юбилей и другие события</p>
-          </article>
+        <div class="cards-grid cards-grid--3" id="cms-categories">
+          <!-- filled by cms.js -->
         </div>
       </div>
     </section>
@@ -176,90 +87,12 @@
     <!-- ============ EXAMPLES / PORTFOLIO ============ -->
     <section class="section section--alt" id="portfolio">
       <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title">Примеры <span class="grad-text">наших работ</span></h2>
+        <div class="section__head reveal" id="cms-portfolio-head">
+          <!-- filled by cms.js -->
         </div>
 
         <div class="works-list" id="worksList">
-          <!-- Player 1 — pink -->
-          <article class="track track--pink reveal" data-track data-src="galek-3.mp3" data-duration="160">
-            <div class="track__head">
-              <button class="play-btn" aria-label="Слушать Пример 1">
-                <svg class="icon-play" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
-                <svg class="icon-pause" viewBox="0 0 24 24" fill="none"><path d="M9 5h3v14H9zM15 5h3v14h-3z" fill="currentColor"/></svg>
-              </button>
-              <div class="track__meta">
-                <span class="track__label">Пример 1</span>
-                <h3 class="track__title">Песня на день рождения</h3>
-              </div>
-              <div class="track__time"><span class="cur">0:00</span> / <span class="dur">2:39</span></div>
-            </div>
-            <div class="track__wave" role="slider" aria-label="Прогресс воспроизведения" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-              <div class="track__bars" aria-hidden="true"></div>
-              <div class="track__progress"></div>
-              <div class="track__handle"></div>
-            </div>
-          </article>
-
-          <!-- Player 2 — blue -->
-          <article class="track track--blue reveal" data-track data-src="almira-main-remastered.mp3" data-duration="128">
-            <div class="track__head">
-              <button class="play-btn" aria-label="Слушать Пример 2">
-                <svg class="icon-play" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
-                <svg class="icon-pause" viewBox="0 0 24 24" fill="none"><path d="M9 5h3v14H9zM15 5h3v14h-3z" fill="currentColor"/></svg>
-              </button>
-              <div class="track__meta">
-                <span class="track__label">Пример 2</span>
-                <h3 class="track__title">Свадебная песня</h3>
-              </div>
-              <div class="track__time"><span class="cur">0:00</span> / <span class="dur">2:08</span></div>
-            </div>
-            <div class="track__wave" role="slider" aria-label="Прогресс воспроизведения" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-              <div class="track__bars" aria-hidden="true"></div>
-              <div class="track__progress"></div>
-              <div class="track__handle"></div>
-            </div>
-          </article>
-
-          <!-- Player 3 — pink -->
-          <article class="track track--pink reveal" data-track data-src="dmitriy-light-pop.mp3" data-duration="220">
-            <div class="track__head">
-              <button class="play-btn" aria-label="Слушать Пример 3">
-                <svg class="icon-play" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
-                <svg class="icon-pause" viewBox="0 0 24 24" fill="none"><path d="M9 5h3v14H9zM15 5h3v14h-3z" fill="currentColor"/></svg>
-              </button>
-              <div class="track__meta">
-                <span class="track__label">Пример 3</span>
-                <h3 class="track__title">Гимн компании</h3>
-              </div>
-              <div class="track__time"><span class="cur">0:00</span> / <span class="dur">3:39</span></div>
-            </div>
-            <div class="track__wave" role="slider" aria-label="Прогресс воспроизведения" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-              <div class="track__bars" aria-hidden="true"></div>
-              <div class="track__progress"></div>
-              <div class="track__handle"></div>
-            </div>
-          </article>
-
-          <!-- Player 4 — hidden, revealed by "Слушать больше примеров" -->
-          <article class="track track--blue track--more reveal" data-track data-src="rinat-main-version.mp3" data-duration="163" hidden>
-            <div class="track__head">
-              <button class="play-btn" aria-label="Слушать Пример 4">
-                <svg class="icon-play" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
-                <svg class="icon-pause" viewBox="0 0 24 24" fill="none"><path d="M9 5h3v14H9zM15 5h3v14h-3z" fill="currentColor"/></svg>
-              </button>
-              <div class="track__meta">
-                <span class="track__label">Пример 4</span>
-                <h3 class="track__title">Песня для близких</h3>
-              </div>
-              <div class="track__time"><span class="cur">0:00</span> / <span class="dur">2:43</span></div>
-            </div>
-            <div class="track__wave" role="slider" aria-label="Прогресс воспроизведения" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-              <div class="track__bars" aria-hidden="true"></div>
-              <div class="track__progress"></div>
-              <div class="track__handle"></div>
-            </div>
-          </article>
+          <!-- filled by cms.js -->
         </div>
 
         <div class="works__more reveal">
@@ -271,9 +104,8 @@
     <!-- ============ YOUTUBE / РЕЛИЗЫ ============ -->
     <section class="section" id="youtube">
       <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title">Свежие релизы на <span class="grad-text">YouTube</span></h2>
-          <p class="section__lead">Смотрите наши новые клипы и истории создания песен</p>
+        <div class="section__head reveal" id="cms-youtube-head">
+          <!-- filled by cms.js -->
         </div>
 
         <div class="yt-carousel reveal">
@@ -283,7 +115,6 @@
 
           <div class="yt-viewport">
             <div class="yt-track" id="ytTrack" aria-live="polite">
-              <!-- loading state -->
               <div class="yt-status" id="ytStatus">
                 <span class="yt-status__spinner" aria-hidden="true"></span>
                 <span>Загрузка видео с YouTube…</span>
@@ -298,7 +129,6 @@
 
         <div class="yt-cta reveal">
           <a href="https://www.youtube.com/@RitmixLOVE/" target="_blank" rel="noopener" class="btn btn--youtube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.8-1.8C19.3 5 12 5 12 5s-7.3 0-8.8.5a2.5 2.5 0 00-1.8 1.8C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 001.8 1.8C4.7 19 12 19 12 19s7.3 0 8.8-.5a2.5 2.5 0 001.8-1.8C23 15.2 23 12 23 12zm-13 3.5v-7l6 3.5-6 3.5z"/></svg>
             Подписаться на YouTube-канал
           </a>
         </div>
@@ -308,66 +138,11 @@
     <!-- ============ PRICING ============ -->
     <section class="section" id="pricing">
       <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title">Тарифы</h2>
+        <div class="section__head reveal" id="cms-pricing-head">
+          <!-- filled by cms.js -->
         </div>
-
-        <div class="pricing-grid">
-          <!-- Tariff 1 -->
-          <article class="price-card reveal">
-            <div class="price-card__head">
-              <h3 class="price-card__name">Именная песня</h3>
-              <p class="price-card__sub">Для личных событий и особенных людей</p>
-            </div>
-            <ul class="price-card__features">
-              <li><span class="check"></span>Авторский текст и музыка</li>
-              <li><span class="check"></span>1 основная версия</li>
-              <li><span class="check"></span>Студийная запись и сведение</li>
-              <li><span class="check"></span>Файл в MP3</li>
-            </ul>
-            <div class="price-card__foot">
-              <div class="price-card__price"><span class="amount">15 000</span><span class="currency">₸</span></div>
-              <a href="https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8E%20%C2%AB%D0%9B%D0%B8%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%C2%BB%20%2815%20000%20%E2%82%B8%29." target="_blank" rel="noopener" class="btn btn--primary btn--block">Заказать</a>
-            </div>
-          </article>
-
-          <!-- Tariff 2 — featured (blue) -->
-          <article class="price-card price-card--featured reveal">
-            <span class="price-card__badge">Популярный</span>
-            <div class="price-card__head">
-              <h3 class="price-card__name">Рекламная песня / гимн</h3>
-              <p class="price-card__sub">Для бизнеса и брендов</p>
-            </div>
-            <ul class="price-card__features">
-              <li><span class="check"></span>Авторский текст и музыка</li>
-              <li><span class="check"></span>2 версии исполнения</li>
-              <li><span class="check"></span>Студийная запись и сведение</li>
-              <li><span class="check"></span>Коммерческие права</li>
-              <li><span class="check"></span>Файл в WAV и MP3</li>
-            </ul>
-            <div class="price-card__foot">
-              <div class="price-card__price"><span class="amount">25 000</span><span class="currency">₸</span></div>
-              <a href="https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%C2%AB%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D1%83%D1%8E%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8E%20/%20%D0%B3%D0%B8%D0%BC%D0%BD%C2%BB%20%2825%20000%20%E2%82%B8%29." target="_blank" rel="noopener" class="btn btn--blue btn--block">Заказать</a>
-            </div>
-          </article>
-
-          <!-- Tariff 3 -->
-          <article class="price-card reveal">
-            <div class="price-card__head">
-              <h3 class="price-card__name">Ускоренный заказ</h3>
-              <p class="price-card__sub">Когда нужно очень быстро</p>
-            </div>
-            <ul class="price-card__features">
-              <li><span class="check"></span>Выполнение до 12 часов</li>
-              <li><span class="check"></span>1 основная версия</li>
-              <li><span class="check"></span>Студийная запись</li>
-              <li><span class="check"></span>Файл в MP3</li>
-            </ul>
-            <div class="price-card__foot">
-              <div class="price-card__price"><span class="amount">20 000</span><span class="currency">₸</span></div>
-              <a href="https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%C2%AB%D0%A3%D1%81%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%C2%BB%20%D0%BF%D0%B5%D1%81%D0%BD%D0%B8%20%2820%20000%20%E2%82%B8%29." target="_blank" rel="noopener" class="btn btn--primary btn--block">Заказать</a>
-            </div>
-          </article>
+        <div class="pricing-grid" id="cms-pricing">
+          <!-- filled by cms.js -->
         </div>
       </div>
     </section>
@@ -375,56 +150,11 @@
     <!-- ============ HOW TO ORDER ============ -->
     <section class="section section--alt" id="process">
       <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title">Как заказать <span class="grad-text">песню</span></h2>
+        <div class="section__head reveal" id="cms-process-head">
+          <!-- filled by cms.js -->
         </div>
-
-        <div class="steps">
-          <div class="steps__line" aria-hidden="true"></div>
-
-          <article class="step reveal">
-            <div class="step__top">
-              <div class="step__num">1</div>
-              <span class="step__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v12H9l-4 4V5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-              </span>
-            </div>
-            <h3 class="step__title">Расскажите историю</h3>
-            <p class="step__text">Заполните короткую анкету о человеке и событии</p>
-          </article>
-
-          <article class="step reveal">
-            <div class="step__top">
-              <div class="step__num">2</div>
-              <span class="step__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="2.5" stroke="currentColor" stroke-width="1.7"/><circle cx="18" cy="16" r="2.5" stroke="currentColor" stroke-width="1.7"/></svg>
-              </span>
-            </div>
-            <h3 class="step__title">Выберите стиль</h3>
-            <p class="step__text">Подберём настроение и жанр, которые подходят вам</p>
-          </article>
-
-          <article class="step reveal">
-            <div class="step__top">
-              <div class="step__num">3</div>
-              <span class="step__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
-              </span>
-            </div>
-            <h3 class="step__title">Получите демо</h3>
-            <p class="step__text">Мы создадим демо-версию и согласуем детали</p>
-          </article>
-
-          <article class="step reveal">
-            <div class="step__top">
-              <div class="step__num">4</div>
-              <span class="step__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </span>
-            </div>
-            <h3 class="step__title">Получите готовую песню</h3>
-            <p class="step__text">Вы получаете финальную версию в нужных форматах</p>
-          </article>
+        <div class="steps" id="cms-steps">
+          <!-- filled by cms.js -->
         </div>
       </div>
     </section>
@@ -432,48 +162,14 @@
     <!-- ============ REVIEWS ============ -->
     <section class="section" id="reviews">
       <div class="container">
-        <div class="section__head reveal">
-          <h2 class="section__title">Отзывы <span class="grad-text">клиентов</span></h2>
+        <div class="section__head reveal" id="cms-reviews-head">
+          <!-- filled by cms.js -->
         </div>
 
         <div class="reviews-carousel reveal">
           <div class="reviews-viewport">
             <div class="reviews-track" id="reviewsTrack">
-              <figure class="review-card">
-                <div class="review-card__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                <blockquote class="review-card__text">«Песня для мужа на годовщину брака — он плакал от счастья. Спасибо за вашу работу и эмоции, которые вы дарите!»</blockquote>
-                <figcaption class="review-card__person">
-                  <span class="avatar" style="--a1:#ff007a;--a2:#a855f7">А</span>
-                  <span class="review-card__who">
-                    <span class="review-card__name">Алина</span>
-                    <span class="review-card__loc">Алматы</span>
-                  </span>
-                </figcaption>
-              </figure>
-
-              <figure class="review-card">
-                <div class="review-card__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                <blockquote class="review-card__text">«Заказывали гимн для нашей компании. Получилось мощно и профессионально! Рекомендуем RitmixLove.»</blockquote>
-                <figcaption class="review-card__person">
-                  <span class="avatar" style="--a1:#00a2ff;--a2:#a855f7">Д</span>
-                  <span class="review-card__who">
-                    <span class="review-card__name">Дмитрий</span>
-                    <span class="review-card__loc">Астана</span>
-                  </span>
-                </figcaption>
-              </figure>
-
-              <figure class="review-card">
-                <div class="review-card__stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                <blockquote class="review-card__text">«Песня для мамы на юбилей — это лучший подарок! Очень трогательно и красиво исполнено.»</blockquote>
-                <figcaption class="review-card__person">
-                  <span class="avatar" style="--a1:#ff007a;--a2:#e02885">М</span>
-                  <span class="review-card__who">
-                    <span class="review-card__name">Мадина</span>
-                    <span class="review-card__loc">Шымкент</span>
-                  </span>
-                </figcaption>
-              </figure>
+              <!-- filled by cms.js -->
             </div>
           </div>
 
@@ -493,11 +189,10 @@
     <!-- ============ CTA ============ -->
     <section class="cta-band" id="cta">
       <div class="container cta-band__inner reveal">
-        <h2 class="cta-band__title">Создадим песню, которую будут помнить</h2>
-        <p class="cta-band__sub">Напишите нам прямо сейчас — обсудим вашу идею и создадим музыкальный подарок, который тронет сердце.</p>
+        <h2 class="cta-band__title"></h2>
+        <p class="cta-band__sub"></p>
         <div class="cta-band__actions">
-          <a href="https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B8%D0%B4%D0%B5%D1%8E%20%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%B5%D1%81%D0%BD%D0%B8." target="_blank" rel="noopener" class="btn btn--whatsapp">💬 Написать в WhatsApp</a>
-          <a href="https://t.me/ritmixlove" target="_blank" rel="noopener" class="btn btn--telegram">✈️ Написать в Telegram</a>
+          <!-- filled by cms.js -->
         </div>
       </div>
     </section>
@@ -511,64 +206,32 @@
           <img src="LOGO.png" alt="" class="brand__logo" width="34" height="34" />
           <span class="brand__text">RitmixLove<span class="brand__text--sub"> - Production</span></span>
         </a>
-        <p class="footer-about">Создаём авторские песни и музыкальные подарки на заказ. Каждая песня — это история, написанная от сердца.</p>
+        <p class="footer-about"></p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/ritmixlove/" target="_blank" rel="noopener" class="footer-social" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@RitmixLOVE" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M10 9.5v5l4.5-2.5-4.5-2.5z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@ritmixlove" target="_blank" rel="noopener" class="footer-social" aria-label="TikTok">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 4c.5 2.5 2 4 4.5 4.2v3c-1.7 0-3.2-.5-4.5-1.4V15a5.5 5.5 0 11-5.5-5.5v3A2.5 2.5 0 1011 15V4h3z" fill="currentColor"/></svg>
-          </a>
+          <!-- filled by cms.js -->
         </div>
       </div>
 
       <nav class="footer-col" aria-label="Навигация">
-        <h4 class="footer-col__title">Навигация</h4>
-        <ul class="footer-list">
-          <li><a href="#home">Главная</a></li>
-          <li><a href="#portfolio">Портфолио</a></li>
-          <li><a href="#pricing">Тарифы</a></li>
-          <li><a href="#reviews">Отзывы</a></li>
-          <li><a href="#process">Как заказать</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-        </ul>
+        <!-- filled by cms.js -->
       </nav>
 
       <nav class="footer-col" aria-label="Услуги">
-        <h4 class="footer-col__title">Услуги</h4>
-        <ul class="footer-list">
-          <li><a href="#create">Песня на день рождения</a></li>
-          <li><a href="#create">Свадебная песня</a></li>
-          <li><a href="#create">Песня для мамы и папы</a></li>
-          <li><a href="#create">Гимн компании</a></li>
-          <li><a href="#create">Рекламная песня</a></li>
-          <li><a href="#create">Песня на любой повод</a></li>
-        </ul>
+        <!-- filled by cms.js -->
       </nav>
 
       <div class="footer-col">
-        <h4 class="footer-col__title">Контакты</h4>
-        <ul class="footer-contacts">
-          <li><span aria-hidden="true">📞</span> <a href="tel:+77762566066">+7 776 256 60 66</a></li>
-          <li><span aria-hidden="true">✈️</span> <a href="https://t.me/ritmixlove" target="_blank" rel="noopener">@ritmixlove</a></li>
-          <li><span aria-hidden="true">✉️</span> <a href="mailto:info@ritmixlove.kz">info@ritmixlove.kz</a></li>
-          <li><span aria-hidden="true">📍</span> Казахстан, Алматы</li>
-          <li><span aria-hidden="true">🕒</span> Работаем 24/7</li>
-        </ul>
+        <!-- filled by cms.js -->
       </div>
     </div>
 
     <div class="container site-footer__bottom">
-      <span>© 2025 RitmixLove - Production. Все права защищены.</span>
-      <span class="site-footer__made">Сделано с ❤️ для ваших эмоций</span>
+      <!-- filled by cms.js -->
     </div>
   </footer>
 
   <!-- Floating WhatsApp quick-contact button -->
-  <a href="https://wa.me/77762566066" target="_blank" rel="noopener" class="fab-whatsapp" aria-label="Написать в WhatsApp">
+  <a href="#" target="_blank" rel="noopener" class="fab-whatsapp" aria-label="Написать в WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     <span class="fab-whatsapp__pulse" aria-hidden="true"></span>
   </a>
@@ -584,7 +247,7 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-  <script src="youtube.js"></script>
+  <!-- CMS loader applies content/site.json, then loads script.js + youtube.js -->
+  <script src="cms.js"></script>
 </body>
 </html>

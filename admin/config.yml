@@ -1,0 +1,317 @@
+# ============================================================
+# Decap CMS configuration for RitmixLove
+# Edit all site texts, prices, images, and buttons at /admin/
+# ============================================================
+
+# Netlify: enable Identity + Git Gateway, then this backend works.
+# Local editing: run `npx decap-server` and open /admin/ (local_backend: true).
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+# Media uploads land in /assets/images and are referenced as /assets/images/...
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+# Prefer locale for the editor UI
+locale: "ru"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  - name: "site"
+    label: "Содержимое сайта"
+    files:
+      - name: "content"
+        label: "Весь контент сайта"
+        file: "content/site.json"
+        monorepo: false
+        fields:
+          # ---------- Meta ----------
+          - label: "SEO / Meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Title (вкладка браузера)", name: "title", widget: "string" }
+              - { label: "Description (meta)", name: "description", widget: "text" }
+              - { label: "Theme color", name: "themeColor", widget: "string", required: false }
+              - { label: "Язык (lang)", name: "lang", widget: "string", default: "ru", required: false }
+
+          # ---------- Brand ----------
+          - label: "Бренд"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Название", name: "name", widget: "string" }
+              - { label: "Подпись (Production)", name: "sub", widget: "string", required: false }
+              - { label: "Логотип (путь)", name: "logo", widget: "string", required: false }
+              - { label: "Ссылка «на главную»", name: "homeUrl", widget: "string", default: "#home" }
+
+          # ---------- Images ----------
+          - label: "Изображения"
+            name: "images"
+            widget: "object"
+            fields:
+              - { label: "Логотип", name: "logo", widget: "image", required: false }
+              - { label: "Фон Hero", name: "heroBackground", widget: "image", required: false }
+
+          # ---------- Contacts ----------
+          - label: "Контакты и соцсети"
+            name: "contacts"
+            widget: "object"
+            fields:
+              - { label: "Телефон (отображение)", name: "phone", widget: "string" }
+              - { label: "Телефон (ссылка tel:)", name: "phoneHref", widget: "string" }
+              - { label: "WhatsApp URL", name: "whatsappUrl", widget: "string" }
+              - { label: "WhatsApp заказ (с текстом)", name: "whatsappOrderUrl", widget: "string", required: false }
+              - { label: "Telegram URL", name: "telegramUrl", widget: "string" }
+              - { label: "Telegram handle", name: "telegramHandle", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Email (mailto:)", name: "emailHref", widget: "string" }
+              - { label: "Адрес / локация", name: "location", widget: "string" }
+              - { label: "Часы работы", name: "hours", widget: "string" }
+              - { label: "Instagram URL", name: "instagramUrl", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtubeUrl", widget: "string", required: false }
+              - { label: "YouTube handle", name: "youtubeHandle", widget: "string", required: false }
+              - { label: "TikTok URL", name: "tiktokUrl", widget: "string", required: false }
+
+          # ---------- Navigation ----------
+          - label: "Навигация (шапка)"
+            name: "nav"
+            widget: "list"
+            summary: "{{fields.label}}"
+            fields:
+              - { label: "Текст", name: "label", widget: "string" }
+              - { label: "Ссылка", name: "href", widget: "string" }
+
+          # ---------- Buttons ----------
+          - label: "Кнопки"
+            name: "buttons"
+            widget: "object"
+            fields:
+              - label: "Заказать (шапка / мобильное меню)"
+                name: "orderNav"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "Hero — основная"
+                name: "heroPrimary"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "Hero — вторичная"
+                name: "heroSecondary"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "YouTube — подписаться"
+                name: "youtubeSubscribe"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "CTA — WhatsApp"
+                name: "ctaWhatsapp"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "CTA — Telegram"
+                name: "ctaTelegram"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "Плавающая кнопка WhatsApp"
+                name: "fabWhatsapp"
+                widget: "object"
+                fields:
+                  - { label: "Aria-label", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "url", widget: "string" }
+              - label: "Кнопка заказа по умолчанию"
+                name: "orderDefault"
+                widget: "object"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+
+          # ---------- Hero ----------
+          - label: "Hero (главный экран)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow (над заголовком)", name: "eyebrow", widget: "string" }
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Акцент заголовка", name: "titleAccent", widget: "string" }
+              - { label: "Подзаголовок", name: "subtitle", widget: "text" }
+              - label: "Чипы преимуществ"
+                name: "chips"
+                widget: "list"
+                field: { label: "Текст чипа", name: "chip", widget: "string" }
+
+          # ---------- Advantages ----------
+          - label: "Преимущества"
+            name: "advantages"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Иконка (emoji)", name: "icon", widget: "string" }
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Текст", name: "text", widget: "text" }
+
+          # ---------- Categories ----------
+          - label: "Что мы создаём"
+            name: "categories"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Акцент заголовка", name: "titleAccent", widget: "string" }
+              - label: "Карточки"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Иконка (emoji)", name: "icon", widget: "string" }
+                  - { label: "Заголовок", name: "title", widget: "string" }
+                  - { label: "Текст", name: "text", widget: "text" }
+
+          # ---------- Portfolio ----------
+          - label: "Портфолио / примеры"
+            name: "portfolio"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Акцент заголовка", name: "titleAccent", widget: "string" }
+              - { label: "Кнопка «ещё примеры»", name: "loadMoreLabel", widget: "string" }
+              - label: "Треки"
+                name: "tracks"
+                widget: "list"
+                summary: "{{fields.label}} — {{fields.title}}"
+                fields:
+                  - { label: "Метка (Пример 1)", name: "label", widget: "string" }
+                  - { label: "Название", name: "title", widget: "string" }
+                  - { label: "Аудиофайл", name: "src", widget: "file", media_folder: "assets/audio", public_folder: "/assets/audio", required: false }
+                  - { label: "Длительность (сек)", name: "duration", widget: "number", value_type: "int", required: false }
+                  - label: "Цвет плеера"
+                    name: "color"
+                    widget: "select"
+                    options: ["pink", "blue"]
+                    default: "pink"
+                  - { label: "Скрыт (показать по кнопке)", name: "hidden", widget: "boolean", default: false }
+
+          # ---------- YouTube ----------
+          - label: "YouTube-секция"
+            name: "youtube"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Акцент", name: "titleAccent", widget: "string" }
+              - { label: "Подзаголовок", name: "lead", widget: "text", required: false }
+              - { label: "Текст загрузки", name: "loadingText", widget: "string", required: false }
+              - { label: "URL канала", name: "channelUrl", widget: "string" }
+              - { label: "Текст кнопки подписки", name: "subscribeLabel", widget: "string", required: false }
+
+          # ---------- Pricing ----------
+          - label: "Тарифы"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - { label: "Заголовок секции", name: "title", widget: "string" }
+              - { label: "Валюта", name: "currency", widget: "string", default: "₸" }
+              - label: "Пакеты"
+                name: "packages"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.price}}"
+                fields:
+                  - { label: "Название", name: "name", widget: "string" }
+                  - { label: "Подзаголовок", name: "subtitle", widget: "string", required: false }
+                  - { label: "Цена (число/строка)", name: "price", widget: "string" }
+                  - { label: "Популярный (featured)", name: "featured", widget: "boolean", default: false }
+                  - { label: "Бейдж (напр. Популярный)", name: "badge", widget: "string", required: false }
+                  - label: "Список фич"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Фича", name: "feature", widget: "string" }
+                  - { label: "Текст кнопки", name: "buttonLabel", widget: "string", default: "Заказать" }
+                  - { label: "Ссылка кнопки", name: "buttonUrl", widget: "string" }
+
+          # ---------- Process ----------
+          - label: "Как заказать"
+            name: "process"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Акцент", name: "titleAccent", widget: "string" }
+              - label: "Шаги"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.num}}. {{fields.title}}"
+                fields:
+                  - { label: "Номер", name: "num", widget: "string" }
+                  - label: "Иконка"
+                    name: "icon"
+                    widget: "select"
+                    options: ["chat", "music", "play", "download"]
+                    default: "chat"
+                  - { label: "Заголовок", name: "title", widget: "string" }
+                  - { label: "Текст", name: "text", widget: "text" }
+
+          # ---------- Reviews ----------
+          - label: "Отзывы"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Акцент", name: "titleAccent", widget: "string" }
+              - label: "Отзывы"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.name}} — {{fields.location}}"
+                fields:
+                  - { label: "Звёзды (1–5)", name: "stars", widget: "number", value_type: "int", min: 1, max: 5, default: 5 }
+                  - { label: "Текст отзыва", name: "text", widget: "text" }
+                  - { label: "Имя", name: "name", widget: "string" }
+                  - { label: "Город", name: "location", widget: "string", required: false }
+                  - { label: "Буква аватара", name: "avatarLetter", widget: "string", required: false }
+                  - { label: "Цвет аватара 1", name: "avatarColor1", widget: "string", required: false, default: "#ff007a" }
+                  - { label: "Цвет аватара 2", name: "avatarColor2", widget: "string", required: false, default: "#a855f7" }
+
+          # ---------- CTA ----------
+          - label: "CTA-блок"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Заголовок", name: "title", widget: "string" }
+              - { label: "Подзаголовок", name: "subtitle", widget: "text" }
+
+          # ---------- Footer ----------
+          - label: "Подвал"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "О студии", name: "about", widget: "text" }
+              - { label: "Заголовок «Навигация»", name: "navTitle", widget: "string", default: "Навигация" }
+              - { label: "Заголовок «Услуги»", name: "servicesTitle", widget: "string", default: "Услуги" }
+              - { label: "Заголовок «Контакты»", name: "contactsTitle", widget: "string", default: "Контакты" }
+              - { label: "Copyright ({year} = год)", name: "copyright", widget: "string" }
+              - { label: "Подпись «сделано с»", name: "madeWith", widget: "string", required: false }
+              - label: "Ссылки навигации"
+                name: "nav"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "href", widget: "string" }
+              - label: "Ссылки услуг"
+                name: "services"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "Текст", name: "label", widget: "string" }
+                  - { label: "Ссылка", name: "href", widget: "string" }
