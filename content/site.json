@@ -1,4 +1,66 @@
 {
+  "meta": {
+    "title": "RitmixLove — Production · Именные песни на заказ",
+    "description": "RitmixLove — Production. Создаём душевные именные песни и музыкальные подарки для дней рождения, свадеб, годовщин, родителей, детей, рекламы и корпоративных гимнов. Студийное качество, срок до 24 часов.",
+    "themeColor": "#0b0717",
+    "lang": "ru"
+  },
+  "brand": {
+    "name": "RitmixLove",
+    "sub": "- Production",
+    "logo": "LOGO.png",
+    "homeUrl": "#home"
+  },
+  "images": {
+    "logo": "/assets/images/logo.png",
+    "heroBackground": "/assets/images/new_main_imeg.png"
+  },
+  "contacts": {
+    "phone": "+7 776 256 60 66",
+    "phoneHref": "tel:+77762566066",
+    "whatsappUrl": "https://wa.me/77762566066",
+    "whatsappOrderUrl": "https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8E%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D0%BF%D0%BE%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC.",
+    "telegramUrl": "https://t.me/ritmixlove",
+    "telegramHandle": "@ritmixlove",
+    "email": "info@ritmixlove.kz",
+    "emailHref": "mailto:info@ritmixlove.kz",
+    "location": "Казахстан, Караганда",
+    "hours": "Работаем 24/7",
+    "instagramUrl": "https://www.instagram.com/ritmixlove/",
+    "youtubeUrl": "https://www.youtube.com/@RitmixLOVE",
+    "youtubeHandle": "@RitmixLOVE",
+    "tiktokUrl": "https://www.tiktok.com/@ritmixlove"
+  },
+  "nav": [
+    {
+      "label": "Главная",
+      "href": "#home"
+    },
+    {
+      "label": "Портфолио",
+      "href": "#portfolio"
+    },
+    {
+      "label": "Релизы",
+      "href": "#youtube"
+    },
+    {
+      "label": "Тарифы",
+      "href": "#pricing"
+    },
+    {
+      "label": "Отзывы",
+      "href": "#reviews"
+    },
+    {
+      "label": "Как заказать",
+      "href": "#process"
+    },
+    {
+      "label": "Контакты",
+      "href": "#contacts"
+    }
+  ],
   "buttons": {
     "orderNav": {
       "label": "Заказать песню",
@@ -32,36 +94,124 @@
       "label": "Заказать"
     }
   },
-  "nav": [
+  "hero": {
+    "eyebrow": "♡ ПЕСНИ, КОТОРЫЕ ГОВОРЯТ ЗА ВАС",
+    "title": "Именные песни",
+    "titleAccent": "на заказ",
+    "subtitle": "Создаём душевные песни и музыкальные подарки для дней рождения, свадеб, годовщин, родителей, детей, рекламы и корпоративных гимнов.",
+    "chips": [
+      "🕒 До 24 часов",
+      "🎧 Студийное качество",
+      "💯 100% уникально"
+    ]
+  },
+  "advantages": [
     {
-      "label": "Главная",
-      "href": "#home"
+      "icon": "🕒",
+      "title": "Срок до 24 часов",
+      "text": "Быстро создаём песню без потери качества"
     },
     {
-      "label": "Портфолио",
-      "href": "#portfolio"
+      "icon": "💎",
+      "title": "Студийное качество",
+      "text": "Профессиональный звук, сведение и мастеринг"
     },
     {
-      "label": "Релизы",
-      "href": "#youtube"
+      "icon": "📝",
+      "title": "Авторский текст по вашей истории",
+      "text": "Пишем от сердца для важных людей"
     },
     {
-      "label": "Тарифы",
-      "href": "#pricing"
+      "icon": "🎵",
+      "title": "2 версии исполнения",
+      "text": "Основная версия и акустическая/альтернативная"
     },
     {
-      "label": "Отзывы",
-      "href": "#reviews"
+      "icon": "🛡️",
+      "title": "Коммерческие права",
+      "text": "Используйте песню свободно и легально"
     },
     {
-      "label": "Как заказать",
-      "href": "#process"
-    },
-    {
-      "label": "Контакты",
-      "href": "#contacts"
+      "icon": "🎧",
+      "title": "Поддержка 24/7",
+      "text": "Всегда на связи на каждом этапе"
     }
   ],
+  "categories": {
+    "title": "Что мы",
+    "titleAccent": "создаём",
+    "items": [
+      {
+        "icon": "🎂",
+        "title": "Песня на день рождения",
+        "text": "Удивите именинника уникальной песней о его жизни и мечтах"
+      },
+      {
+        "icon": "💍",
+        "title": "Свадебная песня",
+        "text": "Ваша история любви в красивой песне для особенного дня"
+      },
+      {
+        "icon": "❤️",
+        "title": "Песня для мамы и папы",
+        "text": "Трогательный подарок родителям, который останется навсегда"
+      },
+      {
+        "icon": "🏢",
+        "title": "Гимн компании",
+        "text": "Подчеркнём ценности бренда и сплотим вашу команду"
+      },
+      {
+        "icon": "📢",
+        "title": "Рекламная песня",
+        "text": "Яркий музыкальный ролик, который запомнится вашим клиентам"
+      },
+      {
+        "icon": "⭐",
+        "title": "Песня на любой повод",
+        "text": "Годовщина, выпускной, крещение, юбилей и другие события"
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Примеры",
+    "titleAccent": "наших работ",
+    "loadMoreLabel": "Слушать больше примеров →",
+    "tracks": [
+      {
+        "label": "Пример 1",
+        "title": "Песня на день рождения",
+        "src": "galek-3.mp3",
+        "duration": 160,
+        "color": "pink",
+        "hidden": false
+      },
+      {
+        "label": "Пример 2",
+        "title": "Свадебная песня",
+        "src": "almira-main-remastered.mp3",
+        "duration": 128,
+        "color": "blue",
+        "hidden": false
+      },
+      {
+        "label": "Пример 3",
+        "title": "Гимн компании",
+        "src": "dmitriy-light-pop.mp3",
+        "duration": 220,
+        "color": "pink",
+        "hidden": false
+      },
+      {
+        "label": "Пример 4",
+        "title": "Песня для близких",
+        "src": "rinat-main-version.mp3",
+        "duration": 163,
+        "color": "blue",
+        "hidden": true
+      }
+    ]
+  },
   "youtube": {
     "title": "Свежие релизы на",
     "titleAccent": "YouTube",
@@ -69,12 +219,6 @@
     "loadingText": "Загрузка видео с YouTube…",
     "channelUrl": "https://www.youtube.com/@RitmixLOVE/",
     "subscribeLabel": "Подписаться на YouTube-канал"
-  },
-  "meta": {
-    "title": "RitmixLove — Production · Именные песни на заказ",
-    "description": "RitmixLove — Production. Создаём душевные именные песни и музыкальные подарки для дней рождения, свадеб, годовщин, родителей, детей, рекламы и корпоративных гимнов. Студийное качество, срок до 24 часов.",
-    "themeColor": "#0b0717",
-    "lang": "ru"
   },
   "pricing": {
     "title": "Тарифы",
@@ -128,83 +272,6 @@
       }
     ]
   },
-  "brand": {
-    "name": "RitmixLove",
-    "sub": "  - Production",
-    "logo": "LOGO.png",
-    "homeUrl": "#home"
-  },
-  "portfolio": {
-    "title": "Примеры",
-    "titleAccent": "наших работ",
-    "loadMoreLabel": "Слушать больше примеров →",
-    "tracks": [
-      {
-        "label": "Пример 1",
-        "title": "Песня на день рождения",
-        "src": "galek-3.mp3",
-        "duration": 160,
-        "color": "pink",
-        "hidden": false
-      },
-      {
-        "label": "Пример 2",
-        "title": "Свадебная песня",
-        "src": "almira-main-remastered.mp3",
-        "duration": 128,
-        "color": "blue",
-        "hidden": false
-      },
-      {
-        "label": "Пример 3",
-        "title": "Гимн компании",
-        "src": "dmitriy-light-pop.mp3",
-        "duration": 220,
-        "color": "pink",
-        "hidden": false
-      },
-      {
-        "label": "Пример 4",
-        "title": "Песня для близких",
-        "src": "rinat-main-version.mp3",
-        "duration": 163,
-        "color": "blue",
-        "hidden": true
-      }
-    ]
-  },
-  "advantages": [
-    {
-      "icon": "🕒",
-      "title": "Срок до 24 часов",
-      "text": "Быстро создаём песню без потери качества"
-    },
-    {
-      "icon": "💎",
-      "title": "Студийное качество",
-      "text": "Профессиональный звук, сведение и мастеринг"
-    },
-    {
-      "icon": "📝",
-      "title": "Авторский текст по вашей истории",
-      "text": "Пишем от сердца для важных людей"
-    },
-    {
-      "icon": "🎵",
-      "title": "2 версии исполнения",
-      "text": "Основная версия и акустическая/альтернативная"
-    },
-    {
-      "icon": "🛡️",
-      "title": "Коммерческие права",
-      "text": "Используйте песню свободно и легально"
-    },
-    {
-      "icon": "🎧",
-      "title": "Поддержка 24/7",
-      "text": "Всегда на связи на каждом этапе"
-    }
-  ],
   "process": {
     "title": "Как заказать",
     "titleAccent": "песню",
@@ -233,41 +300,6 @@
         "title": "Получите готовую песню",
         "text": "Вы получаете финальную версию в нужных форматах"
       }
-    ]
-  },
-  "cta": {
-    "title": "Создадим песню, которую будут помнить",
-    "subtitle": "Напишите нам прямо сейчас — обсудим вашу идею и создадим музыкальный подарок, который тронет сердце."
-  },
-  "contacts": {
-    "emailHref": "mailto:info@ritmixlove.kz",
-    "telegramHandle": "@ritmixlove",
-    "youtubeHandle": "@RitmixLOVE",
-    "youtubeUrl": "https://www.youtube.com/@RitmixLOVE",
-    "telegramUrl": "https://t.me/ritmixlove",
-    "phone": "+7 776 256 60 668",
-    "hours": "Работаем 24/7",
-    "whatsappOrderUrl": "https://wa.me/77762566066?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8E%20%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D0%BF%D0%BE%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%D0%BC.",
-    "tiktokUrl": "https://www.tiktok.com/@ritmixlove",
-    "location": "Казахстан, Караганда",
-    "phoneHref": "tel:+77762566066",
-    "email": "info@ritmixlove.kz",
-    "instagramUrl": "https://www.instagram.com/ritmixlove/",
-    "whatsappUrl": "https://wa.me/77762566066"
-  },
-  "images": {
-    "logo": "/assets/images/logo.png",
-    "heroBackground": "/assets/images/new_main_imeg.png"
-  },
-  "hero": {
-    "eyebrow": "♡ ПЕСНИ, КОТОРЫЕ ГОВОРЯТ ЗА ВАС",
-    "title": "Именные песни",
-    "titleAccent": "на заказ",
-    "subtitle": "Создаём душевные песни и музыкальные подарки для дней рождения, свадеб, годовщин, родителей, детей, рекламы и корпоративных гимнов.",
-    "chips": [
-      "🕒 До 24 часов",
-      "🎧 Студийное качество",
-      "💯 100% уникально"
     ]
   },
   "reviews": {
@@ -302,6 +334,10 @@
         "avatarColor2": "#e02885"
       }
     ]
+  },
+  "cta": {
+    "title": "Создадим песню, которую будут помнить",
+    "subtitle": "Напишите нам прямо сейчас — обсудим вашу идею и создадим музыкальный подарок, который тронет сердце."
   },
   "footer": {
     "about": "Создаём авторские песни и музыкальные подарки на заказ. Каждая песня — это история, написанная от сердца.",
@@ -360,42 +396,6 @@
       {
         "label": "Песня на любой повод",
         "href": "#create"
-      }
-    ]
-  },
-  "categories": {
-    "title": "Что мы",
-    "titleAccent": "создаём",
-    "items": [
-      {
-        "icon": "🎂",
-        "title": "Песня на день рождения",
-        "text": "Удивите именинника уникальной песней о его жизни и мечтах"
-      },
-      {
-        "icon": "💍",
-        "title": "Свадебная песня",
-        "text": "Ваша история любви в красивой песне для особенного дня"
-      },
-      {
-        "icon": "❤️",
-        "title": "Песня для мамы и папы",
-        "text": "Трогательный подарок родителям, который останется навсегда"
-      },
-      {
-        "icon": "🏢",
-        "title": "Гимн компании",
-        "text": "Подчеркнём ценности бренда и сплотим вашу команду"
-      },
-      {
-        "icon": "📢",
-        "title": "Рекламная песня",
-        "text": "Яркий музыкальный ролик, который запомнится вашим клиентам"
-      },
-      {
-        "icon": "⭐",
-        "title": "Песня на любой повод",
-        "text": "Годовщина, выпускной, крещение, юбилей и другие события"
       }
     ]
   }
